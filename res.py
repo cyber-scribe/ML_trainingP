@@ -5,3 +5,7 @@ st.title(" Score prediction App")
 sh = st.number_input("Enter the number of Study hours:")
 
 button =st.button("Predict the Score!!")
+
+if(button):
+    model=pickle.load(open("res.pkl","rb"))
+    res = model.predict([[sh]])[0]
